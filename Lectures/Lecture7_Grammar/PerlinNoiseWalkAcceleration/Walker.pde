@@ -50,7 +50,7 @@ class Walker {
     location.add(velocity);
     
 
-    history.add(location.get());
+    history.add(location.copy());
     if (history.size() > 1000) {
       history.remove(0);
     }

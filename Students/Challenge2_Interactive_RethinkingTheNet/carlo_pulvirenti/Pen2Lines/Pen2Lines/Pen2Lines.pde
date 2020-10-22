@@ -24,7 +24,7 @@ void setup() {
     cam = new Capture(this, cameras[0]);
     cam.start();     
   } 
-  trackColor = color(0, 0, 250);
+  trackColor = color(255, 0, 0);
   frameRate(25);
   
   c = color(255, 255, 255);

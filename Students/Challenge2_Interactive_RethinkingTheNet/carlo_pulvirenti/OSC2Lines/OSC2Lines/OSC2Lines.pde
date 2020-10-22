@@ -9,10 +9,10 @@ float a=250,b=250;
 float col,ccc=255;
 float mulx=1,muly=1;
 float prox=5;
-float colorback=0,colorbacklines=0;;
+float colorback=0,colorbacklines=0;
 float i;
 
-MyPoint p;
+MyPoint p; //<>//
 int size;
 color c;
 int dim=0;
@@ -32,7 +32,7 @@ void setup() {
   myRemoteLocation = new NetAddress("127.0.0.1",9000);
 }
 
-void draw() { 
+void draw() { //<>//
   clear();
 
   xx=xx*abs(mulx*5);
@@ -43,7 +43,7 @@ void draw() {
       if(colorback>=50){
         colorback=colorback-10;
       }
-    }
+    } //<>//
     if(prox==5){
       if(colorback<=200){
         colorback=colorback+10;
@@ -94,7 +94,16 @@ void draw() {
   
 }
 
+void mousePressed() {
+  OscMessage myMessage = new OscMessage("/accelerometer");
+  myMessage.add(random(50));
+  myMessage.add(random(50));
+  myMessage.add(random(50));
+  oscP5.send(myMessage, myRemoteLocation); 
+}
+
 void oscEvent(OscMessage theOscMessage) {
+  print("ciao");
   if (theOscMessage.checkAddrPattern("/accelerometer")) {
     xx = round(theOscMessage.get(0).floatValue());
     yy = round(theOscMessage.get(1).floatValue()); 

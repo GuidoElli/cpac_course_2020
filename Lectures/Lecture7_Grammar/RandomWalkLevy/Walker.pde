@@ -26,7 +26,7 @@ class Walker {
     float stepx = random(-1, 1);
     float stepy = random(-1, 1);
     
-    float stepsize = montecarlo()*50;
+    float stepsize = montecarlo()*100+10;
     stepx *= stepsize;
     stepy *= stepsize;
     

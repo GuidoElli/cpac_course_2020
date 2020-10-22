@@ -56,9 +56,7 @@ void draw() {
 
   // Move the second one according to the mouse
   if (mousePressed) {
-    p2.lock();
     p2.x = mouseX;
     p2.y = mouseY;
-    p2.unlock();
   } 
 }

@@ -19,6 +19,3 @@ void draw() {
   w.walk();
   w.display();
 }
-
-
-

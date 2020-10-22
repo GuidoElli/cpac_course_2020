@@ -1,5 +1,5 @@
 
-float increment = 0.01;
+float increment = 20;
 
 void setup() {
   size(800,200);
